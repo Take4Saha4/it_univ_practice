@@ -1,0 +1,77 @@
+ @charset "UTF-8";
+/* CSS Document */
+
+body{
+    font-size: 2rem;
+    min-height: 100vh;
+    width: 800px; 
+    margin:0 auto;/*固定幅のレイアウト*/
+    display: grid;
+        
+        grid-template:
+        "..... ...... ...... ...... ...... ...... ....." 
+        "..... header header header header header ....." 150px
+        "..... ...... ...... ...... ...... ...... ....." 
+        "..... left ...... center ........ right ......" 1fr
+        "..... ...... ...... ...... ...... ...... ....." 
+        "..... footer footer footer footer footer ....." 300px
+        "..... ...... ...... ...... ...... ...... ....."
+        /auto 150px auto minmax(300px, 1fr) auto 200px auto;
+    
+    /*thrid gridlayout*/
+/*    grid-template:
+        "..... ...... ...... ...... ...... ...... ....." 10px
+        "..... header header header header header ....." 150px
+        "..... ...... ...... ...... ...... ...... ....." 10px
+        "..... left ...... center ........ right ......" 1fr
+        "..... ...... ...... ...... ...... ...... ....." 10px
+        "..... footer footer footer footer footer ....." 300px
+        "..... ...... ...... ...... ...... ...... ....."
+        /auto 150px 10px 1fr 10px 200px auto;
+    */
+           
+        /*second gridlayout*/ 
+/*        grid-template:
+    "header header header header header" 150px
+        "..... ..... ..... ..... ....." 10px
+        "left .... center .... right" 1fr
+        "..... ..... ..... ..... ....." 10px
+        "footer footer footer footer footer"300px
+        /150px 10px 1fr 10px 200px;*/
+/* first grid layout*/    
+ /*   grid-template: 
+        "header header header" 150px
+        "left center right" 1fr
+        "footer footer footer"300px
+        /150px 1fr 200px;
+    gap: 10px;*/ 
+}
+header{
+grid-area: header; 
+}
+
+main{ 
+grid-area: center;
+    
+}
+nav{ 
+    grid-area: left;
+}
+aside{  
+    grid-area: right;
+
+}
+footer{
+    grid-area: footer;
+
+}
+@media screen and (max-width: 900px){
+    body{
+     grid-template:    
+    "header" 150px
+    "center" 1fr
+    "left" 
+    "right"
+    "footer" 300px;
+    }
+}
